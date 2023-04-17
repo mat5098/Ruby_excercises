@@ -1,5 +1,7 @@
 
-def CaesarCipher (message, shift, result='')
+class CaesarCipher 
+    def translate(message, shift)
+    result=''
     shifted = message.split("")
     shifted.each do |char|
         if char.ord.between?(65,90)
@@ -13,8 +15,9 @@ def CaesarCipher (message, shift, result='')
             result << character
         end
     end
-    puts result
-    
+    result
+    end
 end
 
-CaesarCipher("GrzegorzBrzenczyszczykiewicz",5)
+caesar = CaesarCipher.new
+print caesar.translate("GrzegorzBrzenczyszczykiewicz",5)
